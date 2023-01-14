@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+char str(string s, int start)
+{
+    if(start == s.length()-1)
+    {
+        cout << "No capital letter in the string" << endl;
+        return ' ';
+    }
+
+    if(isupper(s[start]))
+    {
+        return s[start];
+
+    }else
+    {
+        start++;
+        return str(s, start);
+    }
+
+}
+
+int main()
+{
+    string strVar;
+    int index = 0;
+
+    cout << "Enter a string: ";
+    getline(cin, strVar);
+
+    cout << "First capital letter is: " << str(strVar, index) << endl;
+
+
+}
